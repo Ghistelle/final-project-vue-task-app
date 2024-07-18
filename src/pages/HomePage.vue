@@ -14,7 +14,7 @@ It demonstrates how to consume and display data from a Pinia store, and how to c
     <!-- Using 2nd way -->
     <p>{{ countNumber }}</p>
     <p>{{ doubleCountNumber }}</p>
-    <button @click="incrementNumberFunctionFromStore">Add +1</button>
+    <button class="add" @click="incrementNumberFunctionFromStore">Add +1</button>
   </main>
 </template>
 
@@ -65,3 +65,16 @@ console.log(userStore.getTasksForUser());
   - This function is called when the button in the template is clicked.
   */
 </script>
+
+<style>
+.add {
+  background-color: greenyellow;
+  border: 1px solid #f2f2f2;
+  border-radius: 1px;
+  padding: 5px;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+</style>

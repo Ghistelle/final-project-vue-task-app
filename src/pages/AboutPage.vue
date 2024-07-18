@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <h4>About View</h4>
-    <button @click="incrementNumberFunctionFromStore">Add +1</button>
+    <button class="add" @click="incrementNumberFunctionFromStore">Add +1</button>
   </main>
 </template>
 

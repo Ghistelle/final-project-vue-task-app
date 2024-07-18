@@ -5,13 +5,13 @@ By building this component, we will achieve a user interface that allows users t
 
 <template>
   <div>
-    <h1>Add New Task</h1>
+    <h2>Add New Task</h2>
     <!-- v-if directive to show success message if taskAdded is true, otherwise show the form -->
     <div v-if="taskAdded">
       <p>Yay! New task created.</p>
       <button @click="startNewTask">Start a New Task</button>
     </div>
-    <div v-else>
+    <div class="addNewTask" v-else>
       <form @submit.prevent="handleSubmit">
         <div>
           <label for="title">Title:</label>
@@ -38,20 +38,20 @@ By building this component, we will achieve a user interface that allows users t
         <div>
           <label for="extraInfo">Extra Info Required:</label>
           <input v-model="newExtraInfo" type="text" id="extraInfo" />
-          <button type="button" @click="addExtraInfo">Add Info</button>
+          <button class="addInfo" type="button" @click="addExtraInfo">Add Info</button>
           <ul>
             <li
               v-for="(info, index) in newTask.description.extraInfoRequired"
               :key="index"
             >
               {{ info }}
-              <button type="button" @click="removeExtraInfo(index)">
+              <button class="gloden" type="button" @click="removeExtraInfo(index)">
                 Remove
               </button>
             </li>
           </ul>
         </div>
-        <button type="submit">Add Task</button>
+        <button class="addTask" type="submit">Add Task</button>
       </form>
     </div>
   </div>
@@ -171,3 +171,39 @@ const startNewTask = () => {
   - It sets taskAdded to false to hide the success message and display the form again.
   */
 </script>
+
+<style scoped>
+h2{
+  font-weight: 350;
+  font-size: 2.5rem;
+  font-family: roboto;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 20%;
+  right: 50px;
+  transform:translate(-50%)
+}
+
+.addNewTask {
+  background-color: rgba(89, 166, 194, 0.851);
+  line-height: 30px;
+  border: 1px solid white;
+  border-radius: 10px 5px 10px 10px;
+  margin: 20%;
+  padding: 5%;
+  margin-right: 15%;
+
+}
+.addInfo {
+  background-color: rgb(0, 98, 255);
+}
+
+.addTask {
+  background-color: rgb(105, 226, 12);
+}
+.golden {
+  background-color: goldenrod;
+  border-radius: 5px;
+}
+
+</style>

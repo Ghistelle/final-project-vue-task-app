@@ -11,17 +11,17 @@ By building this component, we will achieve a user interface that allows users t
       <div class="form">
         <!-- Email Input -->
         <label
-          >Email
+          >*Email:
           <input id="email" type="text" v-model="formState.email" />
         </label>
         <!-- Password Input -->
         <label
-          >Password
+          >*Password:
           <input id="password" type="password" v-model="formState.password" />
         </label>
         <!-- Button -->
         <!-- I personally like semantic elements, I think they are easier to read as an engineer -->
-        <button type="submit">Log In</button>
+        <button class="vert" type="submit">Log In</button>
       </div>
     </form>
     <!-- END FORM -->
@@ -30,7 +30,7 @@ By building this component, we will achieve a user interface that allows users t
     <!-- END Error Message -->
 
     <p>
-      Don't have an account?
+      <em>Don't have an account?</em>
       <PersonalRouter
         :route="route"
         :buttonText="buttonText"

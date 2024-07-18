@@ -7,7 +7,7 @@ It manages user authentication states, displays navigation links conditionally b
   <header>
     <div class="wrapper">
       <!-- Display a welcome message using the HelloWorld component -->
-      <HelloWorld msg="Final Boiler Plate" />
+      <HelloWorld msg="Final Project" />
 
       <!-- Navigation links -->
       <nav>
@@ -23,12 +23,11 @@ It manages user authentication states, displays navigation links conditionally b
           <RouterLink to="/all-tasks">All Tasks</RouterLink>
           <RouterLink to="/completed-tasks">Completed Tasks</RouterLink>
           <RouterLink to="/add-task">Add New Task</RouterLink>
-          <button @click="handleSignOut">Sign Out</button>
+          <button class="orange" @click="handleSignOut">Sign Out</button>
         </template>
       </nav>
     </div>
   </header>
-
   <!-- RouterView to display the current route's component -->
   <RouterView />
 </template>
@@ -121,3 +120,11 @@ What is storeToRefs?
 In order to extract properties from the store while keeping its reactivity, you need to use storeToRefs(). It will create refs for every reactive property. This is useful when you are only using state from the store but not calling any action. Note you can destructure actions directly from the store as they are bound to the store itself too.
 Link: https://pinia.vuejs.org/core-concepts/
 -->
+<style scoped>
+.orange {
+  background-color: orange;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  padding: 10px;
+}
+</style>
