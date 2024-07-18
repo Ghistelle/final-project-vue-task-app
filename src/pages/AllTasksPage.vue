@@ -62,14 +62,14 @@ allowing users to mark tasks as completed and delete them, leveraging global sta
         <!-- Display whether the task is completed or incomplete -->
         <h6>{{ task.isCompleted ? "Completed" : "Incomplete" }}</h6>
         <!-- Button to mark the task as completed -->
-        <button class="gold"
+        <button class="markAsComplete"
           v-bind:disabled="task.isCompleted ? true : false"
           @click="markTaskCompleted(task.id)"
         >
           Mark as Completed
         </button>
         <!-- Button to delete the task -->
-        <button class="red" @click="deleteTask(task.id)">Delete Task</button>
+        <button class="delateTask" @click="deleteTask(task.id)">Delete Task</button>
       </li>
     </ul>
   </div>
@@ -126,13 +126,13 @@ button {
   padding: 5px 10px;
 }
 
-.red {
+.delateTask {
   background-color: rgba(202, 6, 45, 0.833);
   border: 1px solid grey;
 
 }
 
-.gold {
+.markAsComplete {
   background-color: green;
   border: 1px solid grey;
 

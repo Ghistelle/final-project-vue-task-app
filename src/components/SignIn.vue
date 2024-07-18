@@ -19,6 +19,11 @@ By building this component, we will achieve a user interface that allows users t
           >*Password:
           <input id="password" type="password" v-model="formState.password" />
         </label>
+
+        <label>
+          <input id="rememberMe" type="checkbox" v-model="rememberMe" /> <em>Remember me</em>
+        </label>
+
         <!-- Button -->
         <!-- I personally like semantic elements, I think they are easier to read as an engineer -->
         <button class="vert" type="submit">Log In</button>
@@ -63,6 +68,7 @@ const buttonText = "Sign Up";
 const formState = reactive({
   email: "", // Stores the email input
   password: "", // Stores the password input
+  rememberMe:"", // Stores the password and email
   errorMsg: "", // Stores any error messages
 });
 
@@ -86,7 +92,7 @@ const { isLoggedIn } = storeToRefs(userStore);
 let signIn = () => {
   try {
     // 1- Hitting the user store, and hitting a function that is used to LOG IN
-    userStore.signIn(formState.email, formState.password);
+    userStore.signIn(formState.email, formState.password, rememberMe);
     // 2- Change boolean isLoggedIn variable from the store
     isLoggedIn.value = true;
     // 3 - ReRoute the user to the home page
@@ -119,4 +125,5 @@ input {
 button {
   margin: 0.5rem 0;
 }
+
 </style>
